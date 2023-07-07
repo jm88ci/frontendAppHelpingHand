@@ -1,38 +1,29 @@
 <footer>
-<div class="container">
-  <div class="row">
-    <div class="column">
-      <h2>About</h2>
-      <p>Contenido de la columna 1, fila 1</p>
-    </div>
-    <div class="column">
-      <h2>Categories</h2>
-      <p>Contenido de la columna 2, fila 1</p>
-    </div>
-    <div class="column">
-      <h2>Quick Links</h2>
-      <p>Contenido de la columna 2, fila 2</p>
-    </div>
+<div class="grid">
+  <div class="col-4">
+    <h2>About</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dicta dolore eaque eligendi et excepturi ipsam molestiae necessitatibus nemo nesciunt nulla praesentium quibusdam quo recusandae rem, sunt tempore? Expedita, quae?</p>
   </div>
-  <p-divider></p-divider>
-  <div class="row">
-    <div class="column">
+  <div class="col-4">
+    <h2>Categories</h2>
+    <p>Contenido de la columna 2, fila 1</p>
+  </div>
+  <div class="col-4">
+    <h2>Quick Links</h2>
+    <p>Contenido de la columna 2, fila 2</p>
+  </div>
+  <div class="col-12">
+    <p-divider></p-divider>
+  </div>
+  <div class="col-6">
+    <span>{{date | date: 'dd/MM/YYYY HH:mm' }}</span> <span> &copy; Helping Hand 2023 All Rights Reserved </span>
+  </div>
 
-
-
-      <span>&copy; The helping hand "2023" All Rights Reserved </span>
-    </div>
-    <div class="column">
-      <span>{{date | date: 'dd/MM/YYYY HH:mm' }}</span>
-    </div>
-    <div class="column">
-      <a href="#"> <i class="pi pi-twitter px-3" style="font-size: 2.5rem"></i> </a>
-      <a href="#"> <i class="pi pi-youtube px-3" style="font-size: 2.5rem"></i></a>
-      <a href="#"> <i class="pi pi-instagram px-3" style="font-size: 2.5rem"></i></a>
-      <a href="#"> <i class="pi pi-facebook px-3" style="font-size: 2.5rem"></i></a>
-
-    </div>
-
+  <div class="col-6">
+    <a href="#"> <i class="pi pi-twitter px-3" style="color: #10486d; font-size: 2.5rem"></i> </a>
+    <a href="#"> <i class="pi pi-youtube px-3" style="color: #c4302b; font-size: 2.5rem"></i></a>
+    <a href="#"> <i class="pi pi-instagram px-3" style="font-size: 2.5rem"></i></a>
+    <a href="#"> <i class="pi pi-facebook px-3" style="font-size: 2.5rem"></i></a>
   </div>
 </div>
 
