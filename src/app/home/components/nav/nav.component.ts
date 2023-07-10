@@ -29,7 +29,7 @@ export class NavComponent {
       {
         label: "Ranking",
         icon: PrimeIcons.CHART_BAR,
-        routerLink: "/"
+        routerLink: "/ranking"
       },
       {
         label: "Configuración",
