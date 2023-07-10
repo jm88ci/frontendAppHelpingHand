@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HomeModule} from "./home/home.module";
 import {PrimengModule} from "./primeng/primeng.module";
 import {SharedModule} from "./shared/shared.module";
+import {AuthModule} from "./auth/auth.module";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {SharedModule} from "./shared/shared.module";
     BrowserAnimationsModule,
     HomeModule,
     PrimengModule,
-    SharedModule
+    SharedModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

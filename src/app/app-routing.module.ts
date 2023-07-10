@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {AppComponent} from "./app.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Ruta inicial redireccionada a /home
+  { path: '', redirectTo: '/auth/login', pathMatch: 'full' }, // Ruta inicial redireccionada a /home
   { path: 'home', component: AppComponent },
   { path: 'chat', component: AppComponent },
   { path: 'ranking', component: AppComponent },
@@ -12,6 +12,8 @@ const routes: Routes = [
   { path: 'contactos', component: AppComponent },
   { path: 'login', component: AppComponent },
   { path: 'logout', component: AppComponent },
+  { path: 'auth/login', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+  {path: "**", redirectTo: "" }
   // Agrega más rutas según tus necesidades
 ];
 
