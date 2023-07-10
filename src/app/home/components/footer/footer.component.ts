@@ -8,9 +8,13 @@ import { Component } from '@angular/core';
 export class FooterComponent {
   title = 'footer';
   public date: Date;
+  visible: boolean = false;
 
   constructor() {
     this.date = new Date();
+  }
+  showDialog() {
+    this.visible = true;
   }
 }
 

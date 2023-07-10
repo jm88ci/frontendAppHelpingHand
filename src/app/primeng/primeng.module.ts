@@ -5,6 +5,7 @@ import {DividerModule} from "primeng/divider";
 import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/inputtext";
 import {CardModule} from "primeng/card";
+import {DialogModule} from "primeng/dialog";
 
 
 //Añadir aquí sólo los módulos de prime
@@ -15,7 +16,8 @@ import {CardModule} from "primeng/card";
     DividerModule,
     ButtonModule,
     InputTextModule,
-    CardModule
+    CardModule,
+    DialogModule
   ]
 })
 export class PrimengModule { }

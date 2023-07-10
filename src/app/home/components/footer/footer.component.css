@@ -18,8 +18,8 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background: linear-gradient(to top, black, cyan);
-  color:white;
-  padding: 20px;
+  background: linear-gradient(45deg, #E8B761, #DB993D, #CE7B19);
+  color:black;
+  padding: 5px;
   text-align: center;
 }

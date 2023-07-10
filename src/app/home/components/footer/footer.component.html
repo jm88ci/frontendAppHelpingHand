@@ -1,25 +1,36 @@
 <footer>
 <div class="grid">
+
+
   <div class="col-4">
-    <h2>About</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda dicta dolore eaque eligendi et excepturi ipsam molestiae necessitatibus nemo nesciunt nulla praesentium quibusdam quo recusandae rem, sunt tempore? Expedita, quae?</p>
-  </div>
-  <div class="col-4">
-    <h2>Categories</h2>
-    <p>Contenido de la columna 2, fila 1</p>
-  </div>
-  <div class="col-4">
-    <h2>Quick Links</h2>
-    <p>Contenido de la columna 2, fila 2</p>
-  </div>
-  <div class="col-12">
-    <p-divider></p-divider>
-  </div>
-  <div class="col-6">
     <span>{{date | date: 'dd/MM/YYYY HH:mm' }}</span> <span> &copy; Helping Hand 2023 All Rights Reserved </span>
   </div>
+  <div class="col-4">
+    <p-button (click)="showDialog()" icon="pi pi-external-link" label="Privacidad"></p-button>
+    <p-dialog header="Header" [(visible)]="visible" [style]="{width: '50vw'}">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </p-dialog>
+    <p-button (click)="showDialog()" icon="pi pi-external-link" label="Términos"></p-button>
+    <p-dialog header="Header" [(visible)]="visible" [style]="{width: '50vw'}">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </p-dialog>
+    <p-button (click)="showDialog()" icon="pi pi-external-link" label="Cookies"></p-button>
+    <p-dialog header="Header" [(visible)]="visible" [style]="{width: '50vw'}">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </p-dialog>
 
-  <div class="col-6">
+  </div>
+
+  <div class="col-4">
     <a href="#"> <i class="pi pi-twitter px-3" style="color: #00acee; font-size: 1.5rem"></i> </a>
     <a href="#"> <i class="pi pi-youtube px-3" style="color: #c4302b; font-size: 1.5rem"></i></a>
     <a href="#"> <i class="pi pi-instagram px-3" style="color: #c32aa3; font-size: 1.5rem"></i></a>
