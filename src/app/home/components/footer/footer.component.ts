@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -6,15 +6,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent {
-  title = 'footer';
-  public date: Date;
+  public date!: Date;
   visible: boolean = false;
+  visiblePrivacidad: boolean = false;
+  visibleTerminos: boolean = false;
+  visibleCookies = false;
 
-  constructor() {
-    this.date = new Date();
-  }
-  showDialog() {
-    this.visible = true;
+
+  showDialog(dialogo: string) {
+    switch (dialogo) {
+      case 'privacidad':
+        this.visiblePrivacidad = true;
+        break;
+      case 'terminos':
+        this.visibleTerminos = true;
+        break;
+      case 'cookies':
+        this.visibleCookies = true;
+        break;
+    }
+
   }
 }
 

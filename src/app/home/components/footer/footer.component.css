@@ -23,3 +23,28 @@ footer {
   padding: 5px;
   text-align: center;
 }
+
+.grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-4 {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.col-4 button {
+  width: 90px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.col-4 .button-container {
+  display: flex;
+  gap: 10px;
+}

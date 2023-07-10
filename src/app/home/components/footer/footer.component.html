@@ -6,28 +6,30 @@
     <span>{{date | date: 'dd/MM/YYYY HH:mm' }}</span> <span> &copy; Helping Hand 2023 All Rights Reserved </span>
   </div>
   <div class="col-4">
-    <p-button (click)="showDialog()" icon="pi pi-external-link" label="Privacidad"></p-button>
-    <p-dialog header="Header" [(visible)]="visible" [style]="{width: '50vw'}">
+    <div class="button-container">
+    <p-button (click)="showDialog('privacidad')" icon="pi pi-external-link" label="Privacidad"></p-button>
+    <p-dialog header="Privacidad" [(visible)]="visiblePrivacidad" [style]="{width: '50vw'}">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        El documento de Política de Privacidad y Protección de datos de una página web o tienda online contiene las normas relativas al tratamiento (recogida, gestión y retención) de datos de carácter personal.
+        En este documento tiene que quedar claramente reflejado qué datos del usuario se está recabando, durante cuánto tiempo se guardarán y con qué finalidad se guardan los datos personales recogidos en las diferentes partes de la página web.
       </p>
     </p-dialog>
-    <p-button (click)="showDialog()" icon="pi pi-external-link" label="Términos"></p-button>
-    <p-dialog header="Header" [(visible)]="visible" [style]="{width: '50vw'}">
+    <p-button (click)="showDialog('terminos')" icon="pi pi-external-link" label="Términos"></p-button>
+    <p-dialog header="Términos" [(visible)]="visibleTerminos" [style]="{width: '50vw'}">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        El Reglamento General de Protección de Datos, comúnmente conocido por sus siglas como RGPD son un grupo de leyes y normativas que regulan el área de protección de personas físicas en relación con el
+        tratamiento de datos personales. Estas leyes desde que se redactaron y aprobaron por primera vez, han sufrido varias modificaciones y actualizaciones por lo que nuestros documentos de la empresa y los textos legales de nuestro sitio web deben estar actualizados acorde a la normativa vigente.
       </p>
     </p-dialog>
-    <p-button (click)="showDialog()" icon="pi pi-external-link" label="Cookies"></p-button>
-    <p-dialog header="Header" [(visible)]="visible" [style]="{width: '50vw'}">
+    <p-button (click)="showDialog('cookies')" icon="pi pi-external-link" label="Cookies"></p-button>
+    <p-dialog header="Cookies" [(visible)]="visibleCookies" [style]="{width: '50vw'}">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        El artículo 22.2 de la Ley 34/2002, de 11 de julio, de servicios de la sociedad de la información y de comercio electrónico (LSSI)  establece que el usuario debe recibir información clara y completa sobre la utilización y tratamiento de datos, y a su vez, el usuario debe dar su consentimiento
+        para que los sitios webs puedan utilizar dichos datos.
       </p>
-    </p-dialog>
 
+    </p-dialog>
+    </div>
   </div>
 
   <div class="col-4">
