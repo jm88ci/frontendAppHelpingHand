@@ -4,9 +4,9 @@
       <ng-template pTemplate="header">
         <img src="assets/img/21.png" alt="Titulo: Helping Hand ">
       </ng-template>
-      <p>
+      <h2 class="col-12  fuente-escrita-a-mano">
         {{ frase }}
-      </p>
+      </h2>
       <ng-template pTemplate="footer">
         <p-button label="Iniciar Sesión" [routerLink]="['/auth/login']"></p-button>
         <p-button label="Crear cuenta" styleClass="p-button-success" [style]="{ 'margin-left': '.5em' }" [routerLink]="['/auth/signUp']" ></p-button>
