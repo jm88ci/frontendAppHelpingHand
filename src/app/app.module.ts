@@ -7,12 +7,11 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {HomeModule} from "./home/home.module";
 import {PrimengModule} from "./primeng/primeng.module";
 import {SharedModule} from "./shared/shared.module";
-import {HttpClientModule} from "@angular/common/http";
+import {AuthModule} from "./auth/auth.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +20,7 @@ import {HttpClientModule} from "@angular/common/http";
     HomeModule,
     PrimengModule,
     SharedModule,
-    HttpClientModule
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

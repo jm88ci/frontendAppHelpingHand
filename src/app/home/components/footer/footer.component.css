@@ -14,12 +14,37 @@
 
 }
 footer {
-  position: sticky;
+  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
-  background: linear-gradient(to bottom , rgb(6, 159, 143), rgb(0, 232, 208));
-  color:white;
-  padding: 20px;
+  background: linear-gradient(45deg, #E8B761, #DB993D, #CE7B19);
+  color:black;
+  padding: 5px;
   text-align: center;
+}
+
+.grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.col-4 {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.col-4 button {
+  width: 90px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.col-4 .button-container {
+  display: flex;
+  gap: 10px;
 }
