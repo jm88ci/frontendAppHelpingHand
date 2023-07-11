@@ -2,7 +2,7 @@
   header="BULLYBUSTERS"
   subheader="Cazadores de Matones"
   [style]="{ width: '500px' }"
-  class="text-center sm:shadow-3 mt-3 borde"
+  class="text-center sm:shadow-3 mt-3"
 >
   <ng-template pTemplate="header">
     <img alt="Card" src="assets/img/heroes.png"/>
@@ -14,8 +14,9 @@
   </p>
   <ng-template pTemplate="footer">
     <p-button
-      label="Recargar"
-      icon="pi pi-sync"
+      label="Ranking"
+      icon="pi pi-chart-line"
+      (click)="obtenerArrayDeUsuarios()"
     >
     </p-button>
     <p-button
@@ -27,4 +28,34 @@
     </p-button>
   </ng-template>
 </p-card>
+
+<p-table [value]="usuarios" >
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Foto</th>
+      <th>Nombre Completo</th>
+      <th>Correo</th>
+      <th>Edad</th>
+      <th>Curso</th>
+      <th>Puntuacion</th>
+      <th>Sumar</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-usuario>
+    <tr>
+      <td>img</td>
+      <td>{{usuario.nombre + " "+ usuario.apellido1 + " " + usuario.apellido2}}</td>
+      <td>{{usuario.email}}</td>
+      <td>{{calcularEdad(usuario.edad)}}</td><!-- Pongo edad en vez de fecha de nacimiento para que no me destroce
+       la tabla, porque lo recibo como string de la base de datos y no puedo operar con ella-->
+      <td>{{usuario.curso}}</td>
+      <td>puntuacion</td>
+      <td>
+        <button pButton label="Sumar 3 Puntos" ></button>
+      </td>
+
+    </tr>
+  </ng-template>
+</p-table>
+
 

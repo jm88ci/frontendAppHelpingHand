@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RankingService {
-  private urlBase = 'http://localhost/3000/'; //  la URL del backend
+  private urlBase = 'http://localhost/4200/'; //  la URL del backend
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    private router : Router
+  ) { }
 
   obtenerRanking() {
     return this.httpClient.get(`${this.urlBase}/ranking`);

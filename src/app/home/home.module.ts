@@ -6,7 +6,6 @@ import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {PrimengModule} from "../primeng/primeng.module";
 import { RankingComponent } from './components/ranking/ranking.component';
-import {TableModule} from "primeng/table";
 
 
 
@@ -29,7 +28,7 @@ import {TableModule} from "primeng/table";
     CommonModule,
     PrimengModule,
     NgOptimizedImage,
-    TableModule
+
   ]
 })
 export class HomeModule { }
