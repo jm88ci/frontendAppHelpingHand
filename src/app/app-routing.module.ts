@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'contactos', component: AppComponent },
   { path: 'login', component: AppComponent },
   { path: 'logout', component: AppComponent },
-  { path: 'auth/login', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
+  { path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
   {path: "**", redirectTo: "" }
   // Agrega más rutas según tus necesidades
 ];

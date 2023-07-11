@@ -9,6 +9,7 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {PasswordModule} from "primeng/password";
 import {DialogModule} from "primeng/dialog";
+import {CheckboxModule} from "primeng/checkbox";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {DialogModule} from "primeng/dialog";
     FormsModule,
     HttpClientModule,
     PasswordModule,
-    DialogModule
+    DialogModule,
+    CheckboxModule
   ]
 })
 export class AuthModule { }
