@@ -1,3 +1,30 @@
-<h2>Ranking de Puntuaciones</h2>
-
+<p-card
+  header="BULLYBUSTERS"
+  subheader="Cazadores de Matones"
+  [style]="{ width: '500px' }"
+  class="text-center sm:shadow-3 mt-3 borde"
+>
+  <ng-template pTemplate="header">
+    <img alt="Card" src="assets/img/heroes.png"/>
+  </ng-template>
+  <p>
+    ¡Descubre el increíble mundo de los BullyBusters!
+    ¿Sabes qué son? Son valientes cazadores de matones, como tú, que protegen a otros compañeros
+    y hacen de nuestra comunidad un lugar más seguro y amigable. ¡APÚNTATE!
+  </p>
+  <ng-template pTemplate="footer">
+    <p-button
+      label="Recargar"
+      icon="pi pi-sync"
+    >
+    </p-button>
+    <p-button
+      label="Puntuar"
+      icon="pi pi-gift"
+      styleClass="p-button-secondary"
+      [style]="{ 'margin-left': '.5em' }"
+    >
+    </p-button>
+  </ng-template>
+</p-card>
 
