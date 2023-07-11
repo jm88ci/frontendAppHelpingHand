@@ -9,16 +9,19 @@ import {map, Observable, of, tap} from "rxjs";
 })
 export class AuthService {
   private _usuarioActivo: Usuario | undefined;
+  public readonly url: string;
 
   constructor(
     private httpClient: HttpClient,
     private router : Router
   ) {
+    this.url = "http://localhost:8080/api/v1";
   }
 
   get usuarioActivo(): Usuario | undefined {
     return {...this._usuarioActivo!};
   }
+
 
   public autorizar(correo: string, clave: string): Observable<Usuario[]> {
     const peticion: string = `http://localhost:8080/api/v1/usuarios/search/findByEmailAndPass?email=${correo}&pass=${clave}`;

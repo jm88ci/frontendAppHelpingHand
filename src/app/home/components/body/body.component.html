@@ -8,8 +8,8 @@
         {{ frase }}
       </p>
       <ng-template pTemplate="footer">
-        <p-button label="Iniciar Sesión"></p-button>
-        <p-button label="Crear cuenta" styleClass="p-button-success" [style]="{ 'margin-left': '.5em' }"></p-button>
+        <p-button label="Iniciar Sesión" [routerLink]="['/auth/login']"></p-button>
+        <p-button label="Crear cuenta" styleClass="p-button-success" [style]="{ 'margin-left': '.5em' }" [routerLink]="['/auth/signUp']" ></p-button>
       </ng-template>
     </p-card>
   </div>
