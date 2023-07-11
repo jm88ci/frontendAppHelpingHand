@@ -24,7 +24,7 @@ export class NavComponent {
       {
         label: "Información",
         icon: PrimeIcons.INFO_CIRCLE,
-        routerLink: "/"
+        routerLink: "/informacion"
       },
       {
         label: "Ranking",

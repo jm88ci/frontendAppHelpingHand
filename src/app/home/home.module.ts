@@ -6,6 +6,7 @@ import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {PrimengModule} from "../primeng/primeng.module";
 import {StyleClassModule} from "primeng/styleclass";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -22,10 +23,11 @@ import {StyleClassModule} from "primeng/styleclass";
     BodyComponent,
     FooterComponent
   ],
-  imports: [
-    CommonModule,
-    PrimengModule,
-    StyleClassModule
-  ]
+    imports: [
+        CommonModule,
+        PrimengModule,
+        StyleClassModule,
+        FormsModule
+    ]
 })
 export class HomeModule { }
