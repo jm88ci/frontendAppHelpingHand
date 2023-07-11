@@ -1,22 +1,18 @@
-<div class="container">
-  <div class="row">
-    <div class="column">
-      <h2>Columna 1, Fila 1</h2>
-      <p>Contenido de la columna 1, fila 1</p>
-    </div>
-    <div class="column">
-      <h2>Columna 2, Fila 1</h2>
-      <p>Contenido de la columna 2, fila 1</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="column">
-      <h2>Columna 1, Fila 2</h2>
-      <p>Contenido de la columna 1, fila 2</p>
-    </div>
-    <div class="column">
-      <h2>Columna 2, Fila 2</h2>
-      <p>Contenido de la columna 2, fila 2</p>
-    </div>
+<div class="grid">
+  <div class="col-6 col-offset-3 my-8">
+    <p-card>
+      <ng-template pTemplate="header">
+        <img src="assets/img/21.png" alt="Titulo: Helping Hand ">
+      </ng-template>
+      <p>
+        {{ frase }}
+      </p>
+      <ng-template pTemplate="footer">
+        <p-button label="Iniciar Sesión"></p-button>
+        <p-button label="Crear cuenta" styleClass="p-button-success" [style]="{ 'margin-left': '.5em' }"></p-button>
+      </ng-template>
+    </p-card>
   </div>
 </div>
+
+
