@@ -1,20 +1,20 @@
+<p-toast></p-toast>
 
 <p-dialog
   [visible]="true"
   [closable]="false"
   [modal]="true"
-  [maximizable]="true"
   header="Accede con tu cuenta"
-  class="p-fluid"
 >
 
-  <div class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
+  <div class="surface-ground flex align-items-center justify-content-center  overflow-hidden">
     <div class="flex flex-column align-items-center justify-content-center">
-      <div style="border-radius:56px; padding:0.3rem; background: linear-gradient(180deg, var(--primary-color) 10%, rgba(33, 150, 243, 0) 30%);">
-        <div class="w-full surface-card py-8 px-5 sm:px-8" style="border-radius:53px">
+
+      <div Style="border-radius:56px; padding:0.3rem; background: linear-gradient(45deg, #E8B761, #DB993D, #CE7B19);">
+        <div class="w-full surface-card py-4 px-3 sm:px-6" style="border-radius:53px">
           <div class="text-center mb-5">
-            <img src="assets/img/logomano.png" alt="Image" height="300" class="mb-3">
-            <div class="text-900 text-3xl font-medium mb-3">Welcome, Isabel!</div>
+            <img src="assets/img/img-fondo-login.jpg" alt="Image" height="50" class="mb-3">
+            <div class="text-900 text-3xl font-medium mb-3">Welcome</div>
             <span class="text-600 font-medium">Sign in to continue</span>
           </div>
 
@@ -30,7 +30,7 @@
                 <p-checkbox id="rememberme1" [binary]="true" styleClass="mr-2"></p-checkbox>
                 <label for="rememberme1">Remember me</label>
               </div>
-              <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)">Forgot password?</a>
+              <a class="font-medium no-underline ml-2 text-right cursor-pointer" style="color: var(--primary-color)"  [routerLink]="['/auth/signUp']">Sign Up</a>
             </div>
             <p-button [loading]="procesoLogin" (click)="login()" label="Login"></p-button>
           </div>

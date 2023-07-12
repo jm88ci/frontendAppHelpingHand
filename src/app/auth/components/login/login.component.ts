@@ -1,13 +1,17 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {HttpErrorResponse} from "@angular/common/http";
 import {Router} from "@angular/router";
 import {AuthService} from "../../services/auth.service";
 import {Usuario} from "../../models/usuario.model";
+import {MessageService} from "primeng/api";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [
+    MessageService,
+  ]
 })
 export class LoginComponent {
   public usuarioCorreo: string;
@@ -18,7 +22,8 @@ export class LoginComponent {
 
   constructor(
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private messageService: MessageService
   ) {
     this.usuarioCorreo = "";
     this.usuarioClave = "";
@@ -28,12 +33,18 @@ export class LoginComponent {
 
   public login() {
     this.procesoLogin = true;
-    this.authService.autorizar(this.usuarioCorreo, this.usuarioClave).subscribe(
+    this.authService.authorize(this.usuarioCorreo, this.usuarioClave).subscribe(
       {
-        next: (datos: Usuario[])=>{
-          console.log("tengo los datos",datos);
+        next: (datos: Usuario[]) => {
+          this.messageService.add({
+            summary: "New user",
+            detail: "User has been successfully saved",
+            severity: "success",
+            icon: "pi pi-user-plus"
+          });
+          console.log("tengo los datos", datos);
           this.procesoLogin = false;
-          if (datos.length === 0){
+          if (datos.length === 0) {
             this.mensajeCredencialesNoValidas = true;
           } else {
             this.mensajeCredencialesNoValidas = false;
@@ -41,6 +52,13 @@ export class LoginComponent {
           }
         },
         error: (datos: HttpErrorResponse) => {
+          this.messageService.add({
+            summary: "New user",
+            detail: "There was an error saving. " + datos.message,
+            severity: "error",
+            sticky: false,
+            icon: "pi pi-user-plus"
+          });
           this.procesoLogin = false;
           console.error("Hubo al error al autenticar", datos);
         }

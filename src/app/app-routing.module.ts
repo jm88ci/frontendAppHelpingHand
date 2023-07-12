@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {AppComponent} from "./app.component";
-import {RankingComponent} from "./home/components/ranking/ranking.component";
+import {InfoComponent} from "./informacion/components/info/info.component";
+import {BodyComponent} from "./home/components/body/body.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/auth/login', pathMatch: 'full' }, // Ruta inicial redireccionada a /home
-  { path: 'home', component: AppComponent },
-  { path: 'chat', component: AppComponent },
-  { path: 'ranking', component: RankingComponent },
-  { path: 'informacion-general', component: AppComponent },
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Ruta inicial redireccionada a /home
+  { path: 'home', component: BodyComponent },
+  { path: 'ranking', component: AppComponent },
+  { path: 'informacion', component: InfoComponent },
   { path: 'configuracion', component: AppComponent },
   { path: 'contactos', component: AppComponent },
   { path: 'login', component: AppComponent },

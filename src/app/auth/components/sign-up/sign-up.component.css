@@ -1,0 +1,20 @@
+:host ::ng-deep .custom-dialog .p-dialog-content {
+  background: linear-gradient(45deg, #E8B761, #DB993D, #CE7B19);
+}
+.custom-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.form-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-actions {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}

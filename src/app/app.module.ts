@@ -8,6 +8,7 @@ import {HomeModule} from "./home/home.module";
 import {PrimengModule} from "./primeng/primeng.module";
 import {SharedModule} from "./shared/shared.module";
 import {AuthModule} from "./auth/auth.module";
+import {InformacionModule} from "./informacion/informacion.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {AuthModule} from "./auth/auth.module";
     HomeModule,
     PrimengModule,
     SharedModule,
-    AuthModule
+    AuthModule,
+    InformacionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -17,14 +17,9 @@ export class NavComponent {
         routerLink: "/"
       },
       {
-        label: "Chat",
-        icon: PrimeIcons.COMMENT,
-        routerLink: "/"
-      },
-      {
         label: "Información",
         icon: PrimeIcons.INFO_CIRCLE,
-        routerLink: "/"
+        routerLink: "/informacion"
       },
       {
         label: "Ranking",
