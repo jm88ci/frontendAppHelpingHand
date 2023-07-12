@@ -1,11 +1,10 @@
 <p-toast></p-toast>
 <p-dialog
-  [visible]="true"
-  [closable]="false"
+  [(visible)]="mostrarRegistro"
+  [closable]="true"
   [modal]="true"
   [maximizable]="true"
   header="Make an account"
-  style="width: 400px; height: 500px;"
 >
   <div class="surface-ground flex align-items-center justify-content-center overflow-hidden">
     <div class="flex flex-column align-items-center justify-content-center">
@@ -20,69 +19,74 @@
             <div class="form-column">
 
 
-              <label for="email"  class="block text-900 text-xl font-medium mb-2">Correo:</label>
-              <input id="email" type="email" pInputText formControlName="email" />
+              <label for="email" class="block text-900 text-xl font-medium mb-2">Correo:</label>
+              <input id="email" type="email" pInputText formControlName="email"/>
 
-              <label for="pass"  class="block text-900 text-xl font-medium mb-2">Clave:</label>
-              <input id="pass" type="password" pInputText formControlName="pass" />
+              <label for="pass" class="block text-900 text-xl font-medium mb-2">Clave:</label>
+              <input id="pass" type="password" pInputText formControlName="pass"/>
 
-              <label for="name"  class="block text-900 text-xl font-medium mb-2">Nombre:</label>
-              <input id="name" type="text" pInputText formControlName="name" />
+              <label for="nombre" class="block text-900 text-xl font-medium mb-2">Nombre:</label>
+              <input id="nombre" type="text" pInputText formControlName="nombre"/>
 
-              <label for="apellido1"  class="block text-900 text-xl font-medium mb-2">Apellido 1:</label>
-              <input id="apellido1" type="text" pInputText formControlName="apellido1" />
+              <label for="apellido1" class="block text-900 text-xl font-medium mb-2">Apellido 1:</label>
+              <input id="apellido1" type="text" pInputText formControlName="apellido1"/>
 
-              <label for="apellido2"  class="block text-900 text-xl font-medium mb-2">Apellido 2:</label>
-              <input id="apellido2" type="text" pInputText formControlName="apellido2" />
+              <label for="apellido2" class="block text-900 text-xl font-medium mb-2">Apellido 2:</label>
+              <input id="apellido2" type="text" pInputText formControlName="apellido2"/>
 
-              <label for="curso"  class="block text-900 text-xl font-medium mb-2">Curso:</label>
-              <input id="curso" type="text" pInputText formControlName="curso" />
+              <label for="curso" class="block text-900 text-xl font-medium mb-2">Curso:</label>
+              <input id="curso" type="text" pInputText formControlName="curso"/>
 
-              <label for="direccion"  class="block text-900 text-xl font-medium mb-2">Dirección:</label>
-              <input id="direccion" type="text" pInputText formControlName="direccion" />
+              <label for="direccion" class="block text-900 text-xl font-medium mb-2">Dirección:</label>
+              <input id="direccion" type="text" pInputText formControlName="direccion"/>
 
 
-              <label for="telefono"  class="block text-900 text-xl font-medium mb-2">Teléfono:</label>
-              <input id="telefono" type="text" pInputText formControlName="telefono" />
+              <label for="telefono" class="block text-900 text-xl font-medium mb-2">Teléfono:</label>
+              <input id="telefono" type="text" pInputText formControlName="telefono"/>
             </div>
 
             <div class="form-column block text-900 text-xl font-medium mb-2">
-              <label  class="block text-900 text-xl font-medium mb-2">Foto:</label>
+              <label class="block text-900 text-xl font-medium mb-2">Foto:</label>
               <p-fileUpload
                 name="photo"
                 url="/upload"
                 accept="image/*"
-                (onUpload)="handleFileUpload($event)"
               >
               </p-fileUpload>
-              <label for="fechaNacimiento"  class="block text-900 text-xl font-medium mb-2">Fecha de Nacimiento:</label>
+              <label for="fechaNacimiento" class="block text-900 text-xl font-medium mb-2">Fecha de Nacimiento:</label>
               <p-calendar id="fechaNacimiento" formControlName="fechaNacimiento"></p-calendar>
 
-              <label for="usuarioDesde"  class="block text-900 text-xl font-medium mb-2">Usuario Desde:</label>
+              <label for="usuarioDesde" class="block text-900 text-xl font-medium mb-2">Usuario Desde:</label>
               <p-calendar id="usuarioDesde" formControlName="usuarioDesde"></p-calendar>
 
-              <label for="sexo"  class="block text-900 text-xl font-medium mb-2">Sexo:</label>
-              <input id="sexo" type="text" pInputText formControlName="sexo" />
+              <label for="sexo" class="block text-900 text-xl font-medium mb-2">Sexo:</label>
+              <input id="sexo" type="text" pInputText formControlName="sexo"/>
 
-              <label for="ciudad"  class="block text-900 text-xl font-medium mb-2">Ciudad:</label>
-              <input id="ciudad" type="text" pInputText formControlName="ciudad" />
+              <label for="ciudad" class="block text-900 text-xl font-medium mb-2">Ciudad:</label>
+              <input id="ciudad" type="text" pInputText formControlName="ciudad"/>
 
-              <label for="codigoPostal"  class="block text-900 text-xl font-medium mb-2">Código Postal:</label>
-              <input id="codigoPostal" type="number" pInputText formControlName="codigoPostal" />
+              <label for="codigoPostal" class="block text-900 text-xl font-medium mb-2">Código Postal:</label>
+              <input id="codigoPostal" type="number" pInputText formControlName="codigoPostal"/>
 
-              <label for="pais"  class="block text-900 text-xl font-medium mb-2">País:</label>
-              <input id="pais" type="text" pInputText formControlName="pais" />
-
-
-
+              <label for="pais" class="block text-900 text-xl font-medium mb-2">País:</label>
+              <input id="pais" type="text" pInputText formControlName="pais"/>
             </div>
+            <div class="flex justify-content-end flex-wrap">
+               <div class="flex align-items-center justify-content-center w-4rem h-4rem  m-5">
+                <p-button
 
-            <div class="">
-              <button
-                type="submit"
-                pButton
-                label="Guardar"
-              ></button>
+                  type="submit"
+                  label="Guardar"
+                ></p-button>
+               </div>
+               <div class="flex align-items-center justify-content-center w-4rem h-4rem  m-5">
+              <p-button
+
+                label="Cancelar"
+                styleClass="p-button-secondary"
+                (click)="mostrarRegistro = false"
+              ></p-button>
+            </div>
             </div>
           </form>
         </div>

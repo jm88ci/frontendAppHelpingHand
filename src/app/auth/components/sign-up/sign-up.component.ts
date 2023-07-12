@@ -20,6 +20,7 @@ export class SignUpComponent implements OnInit{
   userForm!: FormGroup;
   // State variables of a process
   public savingUser: boolean;
+  public  mostrarRegistro: boolean;
 
 
   constructor(
@@ -29,12 +30,10 @@ export class SignUpComponent implements OnInit{
   ) {
     this.users = [];
     this.savingUser = false;
+    this.mostrarRegistro = true;
   }
   ngOnInit(): void {
     this.initializeForm();
-  }
-  handleUpload(event:any) {
-    console.log(event.files);
   }
   public initializeForm() {
     this.userForm = this.formBuilder.group({
@@ -97,13 +96,5 @@ export class SignUpComponent implements OnInit{
       // Process the form here
       console.log(this.userForm.value);
     }
-  }
-
-
-  handleFileUpload(event: any) {
-    const file = event.files[0];
-    this.userForm.patchValue({
-      foto: file
-    });
   }
 }
