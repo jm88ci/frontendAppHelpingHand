@@ -28,7 +28,7 @@ export class LoginComponent {
 
   public login() {
     this.procesoLogin = true;
-    this.authService.autorizar(this.usuarioCorreo, this.usuarioClave).subscribe(
+    this.authService.authorize(this.usuarioCorreo, this.usuarioClave).subscribe(
       {
         next: (datos: Usuario[])=>{
           console.log("tengo los datos",datos);

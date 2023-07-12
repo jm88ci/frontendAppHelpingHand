@@ -12,6 +12,7 @@ import {DialogModule} from "primeng/dialog";
 import {CheckboxModule} from "primeng/checkbox";
 import {CalendarModule} from "primeng/calendar";
 import {FileUploadModule} from "primeng/fileupload";
+import {ToastModule} from "primeng/toast";
 
 
 @NgModule({
@@ -19,18 +20,19 @@ import {FileUploadModule} from "primeng/fileupload";
     LoginComponent,
     SignUpComponent
   ],
-  imports: [
-    CommonModule,
-    AuthRoutingModule,
-    PrimengModule,
-    FormsModule,
-    HttpClientModule,
-    PasswordModule,
-    DialogModule,
-    CheckboxModule,
-    ReactiveFormsModule,
-    CalendarModule,
-    FileUploadModule
-  ]
+    imports: [
+        CommonModule,
+        AuthRoutingModule,
+        PrimengModule,
+        FormsModule,
+        HttpClientModule,
+        PasswordModule,
+        DialogModule,
+        CheckboxModule,
+        ReactiveFormsModule,
+        CalendarModule,
+        FileUploadModule,
+        ToastModule
+    ]
 })
 export class AuthModule { }
