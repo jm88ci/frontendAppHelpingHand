@@ -11,10 +11,15 @@ import {PuntuacionService} from "./services/puntuacion.service";
 })
 export class RankingComponent implements OnInit{
   public usuarios: Usuario[] = [];
+  public puntuacionActual: number;
+  public puntuacionTotal: number;
 
   constructor(
     private usuarioService: UsuarioService,
-    private puntuacionService: PuntuacionService) { }
+    private puntuacionService: PuntuacionService) {
+    this.puntuacionActual = 0;
+    this.puntuacionTotal = 0;
+  }
 
   ngOnInit() {
 
@@ -36,45 +41,19 @@ export class RankingComponent implements OnInit{
     });
   }
 
-  calcularEdad(fechaNacimiento: Date): number {
-    if (!fechaNacimiento) {
-      return 0; // Para que no me destroce la tabla pongo el valor predeterminado a cero en caso de que no haya fecha de nacimiento.
-      // En algún momento es undefine preguntar a Salva
-    }
+  calcularEdad(fechaNacimiento: string): number {
+    let fechaDate : Date = new Date(fechaNacimiento);
     const fechaActual = new Date();
-    const diferencia = fechaActual.getTime() - fechaNacimiento.getTime();
-    const edad = new Date(diferencia);
-    return Math.abs(edad.getUTCFullYear() - 1970);
+    if (!fechaNacimiento) {
+      return 0;
+    }
+    return fechaActual.getFullYear() - fechaDate.getFullYear();
   }
 
-  public sumarPuntosUsuario(usuarioAyudaId: number, usuarioAcosadoId: number) {
-    // Obtener la puntuación actual del usuario desde la base de datos
-    this.puntuacionService.obtenerPuntuacion(usuarioAyudaId, usuarioAcosadoId)
-      .subscribe({
-        next: (puntuacionActual) => {
-          // Sumar tres puntos a la puntuación existente
-          const nuevaPuntuacion = puntuacionActual + 3;
-
-          // Actualizar la puntuación en la base de datos
-          this.puntuacionService.actualizarPuntuacion(usuarioAyudaId, usuarioAcosadoId, nuevaPuntuacion)
-            .subscribe({
-              next: () => {
-                console.log('Puntos sumados exitosamente');
-              },
-              error: (error) => {
-                console.error('Error al actualizar la puntuación', error);
-              },
-              complete: () => {
-                console.log('Operación completa');
-              }
-            });
-        },
-        error: (error) => {
-          console.error('Error al obtener la puntuación', error);
-        },
-        complete: () => {
-          console.log('Operación completa');
-        }
-      });
+  public sumarPuntosUsuario(usuario: Usuario) {
+    this.puntuacionService.sumarPuntos(usuario.id, usuario.id).subscribe(() => {
+      usuario.puntuacion += 3;
+      this.puntuacionTotal = usuario.puntuacion;
+    });
   }
 }

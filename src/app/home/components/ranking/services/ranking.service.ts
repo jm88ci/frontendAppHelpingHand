@@ -6,7 +6,7 @@ import {Router} from "@angular/router";
   providedIn: 'root'
 })
 export class RankingService {
-  private urlBase = 'http://localhost/4200/'; //  la URL del backend
+  private urlBase = 'http://localhost:8080'; //  la URL del backend
 
   constructor(
     private httpClient: HttpClient,
