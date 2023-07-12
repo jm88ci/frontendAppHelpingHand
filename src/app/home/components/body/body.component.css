@@ -16,3 +16,10 @@
 img{
   width: 300px;
 }
+
+.botones-separados {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Ajusta el espacio entre los botones  */
+}
+

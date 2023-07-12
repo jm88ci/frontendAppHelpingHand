@@ -12,8 +12,8 @@
           {{ frase }}
         </h2>
         <ng-template pTemplate="footer">
-          <div style="display: flex; justify-content: space-between;">
-            <p-button label="Crear cuenta" styleClass="p-button-success" [routerLink]="['/auth/signUp']"></p-button>
+          <div class="botones-separados">
+            <p-button label="Crear cuenta" styleClass="p-button-success" routerLink="'/auth/signUp'"></p-button>
             <p-button label="Cerrar" (click)="cerrarDialogo()"></p-button>
           </div>
         </ng-template>
