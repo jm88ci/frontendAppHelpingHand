@@ -5,9 +5,8 @@ import {InfoComponent} from "./informacion/components/info/info.component";
 import {BodyComponent} from "./home/components/body/body.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: '/auth/login', pathMatch: 'full' }, // Ruta inicial redireccionada a /home
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, // Ruta inicial redireccionada a /home
   { path: 'home', component: BodyComponent },
-  { path: 'chat', component: AppComponent },
   { path: 'ranking', component: AppComponent },
   { path: 'informacion', component: InfoComponent },
   { path: 'configuracion', component: AppComponent },
