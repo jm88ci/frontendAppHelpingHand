@@ -1,24 +1,21 @@
-import {Component, OnInit} from '@angular/core';
+import { Component } from '@angular/core';
 import {Usuario} from "../../../usuarios/models/usuario.model";
 import {UsuarioService} from "../../../usuarios/services/usuario.service";
+import {PuntuacionService} from "../../services/puntuacion.service";
 import {HttpErrorResponse} from "@angular/common/http";
-import {PuntuacionService} from "./services/puntuacion.service";
 
 @Component({
-  selector: 'app-ranking',
-  templateUrl: './ranking.component.html',
-  styleUrls: ['./ranking.component.css']
+  selector: 'app-clasificacion',
+  templateUrl: './clasificacion.component.html',
+  styleUrls: ['./clasificacion.component.css']
 })
-export class RankingComponent implements OnInit{
+export class ClasificacionComponent {
   public usuarios: Usuario[] = [];
-  public puntuacionActual: number;
-  public puntuacionTotal: number;
 
   constructor(
     private usuarioService: UsuarioService,
     private puntuacionService: PuntuacionService) {
-    this.puntuacionActual = 0;
-    this.puntuacionTotal = 0;
+
   }
 
   ngOnInit() {
@@ -50,10 +47,16 @@ export class RankingComponent implements OnInit{
     return fechaActual.getFullYear() - fechaDate.getFullYear();
   }
 
-  public sumarPuntosUsuario(usuario: Usuario) {
-    this.puntuacionService.sumarPuntos(usuario.id, usuario.id).subscribe(() => {
-      usuario.puntuacion += 3;
-      this.puntuacionTotal = usuario.puntuacion;
+  agregarPuntos(idUsuarioAcosado: number, idUsuarioAyuda: number, puntos: number): void {
+    this.puntuacionService.agregarPuntos(idUsuarioAcosado, idUsuarioAyuda, puntos).subscribe({
+      next: response => {
+        console.log('Puntos agregados exitosamente', response);
+        // Aquí puedes manejar la respuesta de tu servidor, como refrescar la puntuación mostrada en la pantalla
+      },
+      error: err => {
+        console.error('Ha ocurrido un error al agregar los puntos', err);
+      }
     });
   }
+
 }

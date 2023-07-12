@@ -7,6 +7,7 @@ import {InputTextModule} from "primeng/inputtext";
 import {CardModule} from "primeng/card";
 import {DialogModule} from "primeng/dialog";
 import {TableModule} from "primeng/table";
+import {PaginatorModule} from "primeng/paginator";
 
 
 //Añadir aquí sólo los módulos de prime
@@ -19,7 +20,8 @@ import {TableModule} from "primeng/table";
     InputTextModule,
     CardModule,
     DialogModule,
-    TableModule
+    TableModule,
+    PaginatorModule
   ]
 })
 export class PrimengModule { }

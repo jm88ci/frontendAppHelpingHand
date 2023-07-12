@@ -19,4 +19,5 @@ export interface Usuario {
   pais:            string;
   telefono:        string;
   logueado:        boolean;
+  puntuacion:      number;
 }

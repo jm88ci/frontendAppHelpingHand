@@ -9,6 +9,7 @@ import {PrimengModule} from "./primeng/primeng.module";
 import {SharedModule} from "./shared/shared.module";
 import {AuthModule} from "./auth/auth.module";
 import {InformacionModule} from "./informacion/informacion.module";
+import {RankingModule} from "./ranking/ranking.module";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,9 @@ import {InformacionModule} from "./informacion/informacion.module";
     PrimengModule,
     SharedModule,
     AuthModule,
-    InformacionModule
+    InformacionModule,
+    RankingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

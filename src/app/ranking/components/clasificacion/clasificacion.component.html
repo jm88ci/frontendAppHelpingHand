@@ -1,4 +1,4 @@
-<div class="grid">
+<div class="grid m-7">
   <div class="col-4">
     <p-card
       header="BULLYBUSTERS"
@@ -19,13 +19,6 @@
           label="Ranking"
           icon="pi pi-chart-line"
           (click)="obtenerArrayDeUsuarios()"
-        >
-        </p-button>
-        <p-button
-          label="Puntuar"
-          icon="pi pi-gift"
-          styleClass="p-button-secondary"
-          [style]="{ 'margin-left': '.5em' }"
         >
         </p-button>
       </ng-template>
@@ -59,10 +52,11 @@
           <td>{{usuario.email}}</td>
           <td>{{calcularEdad(usuario.fechaNacimiento)}}</td>
           <td>{{usuario.curso}}</td>
-          <td>puntuacion</td>
+          <td>{{usuario.puntuacion}}</td> <!-- Preguntar a Salva como mostrar la puntuación-->
           <td>
-            <button (click)="sumarPuntosUsuario(usuario)" pButton label="Sumar 3 Puntos" ></button>
-          </td>
+            <button (click)="agregarPuntos(usuario.id,usuario.id,3)" pButton label="Sumar 3 Puntos" ></button>
+          </td><!-- Preguntar a Salva porque no recibe las id de los usuarios, eso si todo lo demás funciona
+          porque al usuario con la id 1 le están llegando los puntos" -->
 
         </tr>
       </ng-template>

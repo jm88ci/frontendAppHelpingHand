@@ -1,7 +1,7 @@
 <p-dialog
-  [visible]="true"
-  [closable]="false"
-  [modal]="true">
+  [visible]="dialogVisible"
+  [modal]="true"
+  [closable]="false"> <!-- ponemos 'closable' en false para eliminar la 'x' -->
   <div class="grid">
     <div class="col-4 col-offset-4 my-8">
       <p-card>
@@ -12,8 +12,10 @@
           {{ frase }}
         </h2>
         <ng-template pTemplate="footer">
-          <p-button label="Iniciar Sesión" [routerLink]="['/auth/login']"></p-button>
-          <p-button label="Crear cuenta" styleClass="p-button-success" [style]="{ 'margin-left': '.5em' }" [routerLink]="['/auth/signUp']"></p-button>
+          <div style="display: flex; justify-content: space-between;">
+            <p-button label="Crear cuenta" styleClass="p-button-success" [routerLink]="['/auth/signUp']"></p-button>
+            <p-button label="Cerrar" (click)="cerrarDialogo()"></p-button>
+          </div>
         </ng-template>
       </p-card>
     </div>

@@ -21,9 +21,12 @@ export class BodyComponent {
     ]
 
   frase: string;
+  dialogVisible: boolean;
+
 
   constructor() {
     this.frase = this.obtenerFraseAleatoria();
+    this.dialogVisible = true;
   }
 
   public obtenerFraseAleatoria(): string {
@@ -31,5 +34,8 @@ export class BodyComponent {
     return this.frasesMotivacionales[indice];
   }
 
+  cerrarDialogo() {
+    this.dialogVisible = false;
+  }
 
 }
