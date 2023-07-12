@@ -27,7 +27,7 @@ export class ClasificacionComponent {
     this.usuarioService.obtenerUsuarios().subscribe({
       next: (usuarios: any) => {
         console.log("llegan los usuarios", usuarios)
-        this.usuarios = usuarios._embedded.usuarios;
+        this.usuarios = usuarios;
       },
       error: (error: HttpErrorResponse) => {
         console.log("No están los Usuarios", error)
@@ -47,8 +47,8 @@ export class ClasificacionComponent {
     return fechaActual.getFullYear() - fechaDate.getFullYear();
   }
 
-  agregarPuntos(idUsuarioAcosado: number, idUsuarioAyuda: number, puntos: number): void {
-    this.puntuacionService.agregarPuntos(idUsuarioAcosado, idUsuarioAyuda, puntos).subscribe({
+  agregarPuntos(idUsuarioAyuda: number, puntos: number): void {
+    this.puntuacionService.sumarPuntos(idUsuarioAyuda, puntos).subscribe({
       next: response => {
         console.log('Puntos agregados exitosamente', response);
         // Aquí puedes manejar la respuesta de tu servidor, como refrescar la puntuación mostrada en la pantalla
