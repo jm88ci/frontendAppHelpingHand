@@ -1,5 +1,5 @@
 <p-dialog
-  [visible]="dialogVisible"
+  [(visible)]="dialogVisible"
   [modal]="true"
   [closable]="false"> <!-- ponemos 'closable' en false para eliminar la 'x' -->
   <div class="grid">
@@ -12,7 +12,7 @@
           {{ frase }}
         </h2>
         <ng-template pTemplate="footer">
-          <div>
+          <div class="botones-separados">
             <p-button label="Crear cuenta" styleClass="p-button-success" [routerLink]="['/auth/signUp']"></p-button>
             <p-button label="Cerrar" (click)="cerrarDialogo()"></p-button>
           </div>
@@ -21,3 +21,17 @@
     </div>
   </div>
 </p-dialog>
+
+<div class="grid" *ngIf="!dialogVisible">
+  <div class="col-6 col-offset-3 my-8">
+    <p-card>
+      <ng-template pTemplate="header">
+        <img src="assets/img/sos.png" alt="Titulo: Helping Hand ">
+      </ng-template>
+      <h2 class="col-12  fuente-escrita-a-mano">
+        {{ frase }}
+      </h2>
+
+    </p-card>
+  </div>
+</div>

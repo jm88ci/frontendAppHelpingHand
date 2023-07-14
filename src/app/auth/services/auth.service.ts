@@ -9,6 +9,7 @@ import {map, Observable, of, tap} from "rxjs";
 })
 export class AuthService {
   public readonly url: string;
+  private _usuarioActivo!: Usuario;
 
   constructor(
     private httpClient: HttpClient,
@@ -17,16 +18,20 @@ export class AuthService {
     this.url = "http://localhost:8080/api/v1";
   }
 
+  get usuarioActivo(): Usuario {
+    return this._usuarioActivo;
+  }
 
 
 
-  public authorize(email: string, pass: string): Observable<Usuario[]> {
+  public authorize(email: string, pass: string): Observable<Usuario> {
     const petition: string = `http://localhost:8080/api/v1/usuarios/search/findByEmailAndPass?email=${email}&pass=${pass}`;
-    return this.httpClient.get<Usuario[]>(petition)
+    return this.httpClient.get<Usuario>(petition)
       .pipe(
         //"Pinchamos" la información
-        tap((data: Usuario[]) => {
-          if (data.length > 0) {
+        tap((data: Usuario) => {
+          if (data) {
+            this._usuarioActivo = data;
           }
 
         })
@@ -66,6 +71,8 @@ export class AuthService {
     this.router.navigate(["/auth/login"]);
   }
 
-
+  public mostrarUsuario(usuario: Usuario): Observable<Usuario> {
+    return this.httpClient.get<Usuario>(`${this.url}/usuarios`);
+  }
 
 }
