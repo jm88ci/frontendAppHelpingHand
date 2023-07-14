@@ -8,6 +8,7 @@ import {CardModule} from "primeng/card";
 import {DialogModule} from "primeng/dialog";
 import {TableModule} from "primeng/table";
 import {PaginatorModule} from "primeng/paginator";
+import {FormsModule} from "@angular/forms";
 
 
 //Añadir aquí sólo los módulos de prime
@@ -21,7 +22,8 @@ import {PaginatorModule} from "primeng/paginator";
     CardModule,
     DialogModule,
     TableModule,
-    PaginatorModule
+    PaginatorModule,
+    FormsModule
   ]
 })
 export class PrimengModule { }

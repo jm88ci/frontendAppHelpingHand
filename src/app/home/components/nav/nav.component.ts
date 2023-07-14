@@ -34,7 +34,7 @@ export class NavComponent {
       {
         label: "Contactos",
         icon: PrimeIcons.BOOK,
-        routerLink: "/"
+        routerLink: "/contactos"
       },
       {
         label: "Login",
@@ -58,7 +58,7 @@ export class NavComponent {
       {
         label: "Logout",
         icon: PrimeIcons.POWER_OFF,
-        routerLink: "/"
+        routerLink: "/logout"
       }
 
     ];
