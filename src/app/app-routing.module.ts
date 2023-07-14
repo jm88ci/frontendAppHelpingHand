@@ -6,11 +6,13 @@ import {BodyComponent} from "./home/components/body/body.component";
 import {ClasificacionComponent} from "./ranking/components/clasificacion/clasificacion.component";
 import {ContactoComponent} from "./contactos/components/contacto/contacto.component";
 import {LoginComponent} from "./auth/components/login/login.component";
+import {MensajeComponent} from "./mensajes/components/mensaje/mensaje.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Ruta inicial redireccionada a /home
   { path: 'home', component: BodyComponent },
   { path: 'ranking', component: ClasificacionComponent },
+  { path: 'mensajes', component: MensajeComponent },
   { path: 'informacion', component: InfoComponent },
   { path: 'configuracion', component: AppComponent },
   { path: 'contactos', component: ContactoComponent },

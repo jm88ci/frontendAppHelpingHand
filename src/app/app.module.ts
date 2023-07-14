@@ -11,6 +11,7 @@ import {AuthModule} from "./auth/auth.module";
 import {InformacionModule} from "./informacion/informacion.module";
 import {RankingModule} from "./ranking/ranking.module";
 import {ContactosModule} from "./contactos/contactos.module";
+import {MensajesModule} from "./mensajes/mensajes.module";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {ContactosModule} from "./contactos/contactos.module";
     AuthModule,
     InformacionModule,
     RankingModule,
-    ContactosModule
+    ContactosModule,
+    MensajesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
