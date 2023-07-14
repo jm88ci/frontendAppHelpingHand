@@ -4,11 +4,13 @@ import {AppComponent} from "./app.component";
 import {InfoComponent} from "./informacion/components/info/info.component";
 import {BodyComponent} from "./home/components/body/body.component";
 import {ClasificacionComponent} from "./ranking/components/clasificacion/clasificacion.component";
+import {MensajeComponent} from "./mensajes/components/mensaje/mensaje.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Ruta inicial redireccionada a /home
   { path: 'home', component: BodyComponent },
   { path: 'ranking', component: ClasificacionComponent },
+  { path: 'mensaje', component: MensajeComponent },
   { path: 'informacion', component: InfoComponent },
   { path: 'configuracion', component: AppComponent },
   { path: 'contactos', component: AppComponent },

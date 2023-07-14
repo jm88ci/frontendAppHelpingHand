@@ -10,6 +10,7 @@ import {SharedModule} from "./shared/shared.module";
 import {AuthModule} from "./auth/auth.module";
 import {InformacionModule} from "./informacion/informacion.module";
 import {RankingModule} from "./ranking/ranking.module";
+import {MensajesModule} from "./mensajes/mensajes.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {RankingModule} from "./ranking/ranking.module";
     SharedModule,
     AuthModule,
     InformacionModule,
-    RankingModule
+    RankingModule,
+    MensajesModule
 
   ],
   providers: [],
