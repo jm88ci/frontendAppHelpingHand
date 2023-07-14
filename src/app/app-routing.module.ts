@@ -5,10 +5,11 @@ import {InfoComponent} from "./informacion/components/info/info.component";
 import {BodyComponent} from "./home/components/body/body.component";
 import {ClasificacionComponent} from "./ranking/components/clasificacion/clasificacion.component";
 import {PageConfigComponent} from "./config/page-config/page-config.component";
+import {MensajeComponent} from "./mensajes/components/mensaje/mensaje.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' }, // Ruta inicial redireccionada a /home
-  { path: 'home', component: BodyComponent },
+  { path: 'home', component: MensajeComponent },
   { path: 'ranking', component: ClasificacionComponent },
   { path: 'informacion', component: InfoComponent },
   { path: 'pageConfig', component: PageConfigComponent },

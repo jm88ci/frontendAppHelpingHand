@@ -13,9 +13,6 @@
   padding: 10px;
   border: 1px solid #ccc;
 }
-img{
-  width: 300px;
-}
 
 .botones-separados {
   display: flex;
