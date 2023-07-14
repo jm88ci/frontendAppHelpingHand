@@ -1,11 +1,12 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AuthService} from "../../../auth/services/auth.service";
 
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.css']
 })
-export class BodyComponent {
+export class BodyComponent implements OnInit{
 
   frasesMotivacionales =
     ["Juntos contra el acoso escolar, podemos marcar la diferencia",
@@ -24,9 +25,17 @@ export class BodyComponent {
   dialogVisible: boolean;
 
 
-  constructor() {
+  constructor(private authService: AuthService) {
     this.frase = this.obtenerFraseAleatoria();
-    this.dialogVisible = true;
+    this.dialogVisible = false;
+  }
+
+  ngOnInit(): void {
+    if ( this.authService.usuarioActivo) {
+      this.dialogVisible = false;
+    } else {
+      this.dialogVisible = true;
+    }
   }
 
   public obtenerFraseAleatoria(): string {
@@ -34,8 +43,9 @@ export class BodyComponent {
     return this.frasesMotivacionales[indice];
   }
 
-  cerrarDialogo() {
+  public cerrarDialogo() {
     this.dialogVisible = false;
   }
+
 
 }

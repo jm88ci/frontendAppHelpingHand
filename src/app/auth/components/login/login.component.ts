@@ -35,16 +35,10 @@ export class LoginComponent {
     this.procesoLogin = true;
     this.authService.authorize(this.usuarioCorreo, this.usuarioClave).subscribe(
       {
-        next: (datos: Usuario[]) => {
-          this.messageService.add({
-            summary: "New user",
-            detail: "User has been successfully saved",
-            severity: "success",
-            icon: "pi pi-user-plus"
-          });
-          console.log("tengo los datos", datos);
+        next: (datos: Usuario)=>{
+          console.log("tengo los datos",datos);
           this.procesoLogin = false;
-          if (datos.length === 0) {
+          if (!datos){
             this.mensajeCredencialesNoValidas = true;
           } else {
             this.mensajeCredencialesNoValidas = false;
@@ -52,13 +46,6 @@ export class LoginComponent {
           }
         },
         error: (datos: HttpErrorResponse) => {
-          this.messageService.add({
-            summary: "New user",
-            detail: "There was an error saving. " + datos.message,
-            severity: "error",
-            sticky: false,
-            icon: "pi pi-user-plus"
-          });
           this.procesoLogin = false;
           console.error("Hubo al error al autenticar", datos);
         }

@@ -10,7 +10,7 @@ import {SharedModule} from "./shared/shared.module";
 import {AuthModule} from "./auth/auth.module";
 import {InformacionModule} from "./informacion/informacion.module";
 import {RankingModule} from "./ranking/ranking.module";
-import {MensajesModule} from "./mensajes/mensajes.module";
+import {ContactosModule} from "./contactos/contactos.module";
 
 @NgModule({
   declarations: [
@@ -26,8 +26,7 @@ import {MensajesModule} from "./mensajes/mensajes.module";
     AuthModule,
     InformacionModule,
     RankingModule,
-    MensajesModule
-
+    ContactosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
