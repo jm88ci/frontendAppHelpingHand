@@ -29,7 +29,7 @@ export class NavComponent {
       {
         label: "Configuración",
         icon: PrimeIcons.COG,
-        routerLink: "/"
+        routerLink: "/pageConfig"
       },
       {
         label: "Contactos",
