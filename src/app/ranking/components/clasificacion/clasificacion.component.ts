@@ -12,6 +12,7 @@ import {HttpErrorResponse} from "@angular/common/http";
 export class ClasificacionComponent {
   public usuarios: Usuario[] = [];
 
+
   constructor(
     private usuarioService: UsuarioService,
     private puntuacionService: PuntuacionService) {

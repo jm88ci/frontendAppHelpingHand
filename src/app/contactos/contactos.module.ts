@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 import {ContactoComponent} from './components/contacto/contacto.component';
 import {PrimengModule} from "../primeng/primeng.module";
 
-
 @NgModule({
   declarations: [
     ContactoComponent
@@ -13,7 +12,7 @@ import {PrimengModule} from "../primeng/primeng.module";
     PrimengModule
   ],
   exports: [
-    ContactoComponent
+
   ]
 })
 export class ContactosModule {

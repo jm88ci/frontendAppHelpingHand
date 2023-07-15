@@ -1,25 +1,29 @@
-import {Component} from '@angular/core';
-import {PrimeNGConfig} from "primeng/api";
+import {Component, OnInit} from '@angular/core';
+import {Contacto} from '../../models/contacto.model';
 
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.css']
 })
-export class ContactoComponent {
+export class ContactoComponent implements OnInit{
 
-  constructor(private primengConfig: PrimeNGConfig) {
+  contactos: Contacto[];
+  constructor() {
+    this.contactos = [];
   }
 
+  ngOnInit() {
+    this.cargarContactos();
+  }
 
-
-
-  data = [
-    { name: 'John Doe', phone: '123-456-7890', stars: 4 },
-    { name: 'Jane Smith', phone: '987-654-3210', stars: 5 },
-    { name: 'Alice Johnson', phone: '555-123-4567', stars: 3 },
-    // Agrega más objetos según sea necesario
-  ];
-
-
+  cargarContactos() {
+    this.contactos = [
+      { nombre: 'Marisa Gutierrez Ponce', puesto: 'Direct@r del Centro', telefono: '123456789', correo: 'director@centro.edu', valoracion: '⭐⭐⭐⭐⭐' },
+      { nombre: 'Manuel Sanchez Izquierdo', puesto: 'Jef@ de Estudios', telefono: '987654321', correo: 'jefedeestudios@centro.edu', valoracion: '⭐⭐⭐⭐⭐' },
+      { nombre: 'Amparo Martos Ortega', puesto: 'Orientad@r', telefono: '567890123', correo: 'orientador@centro.edu', valoracion: '⭐⭐⭐⭐⭐' },
+      { nombre: 'Dr. Manuel Aguilera Fuentes', puesto: 'Psicólog@', telefono: '789012345', correo: 'psicologo@centro.edu', valoracion: '⭐⭐⭐⭐⭐' },
+      { nombre: 'Dra. Isabel Núñez Derecho', puesto: 'Psicólog@', telefono: '543210987', correo: 'psiquiatra@centro.edu', valoracion: '⭐⭐⭐⭐⭐' }
+    ];
+  }
 }

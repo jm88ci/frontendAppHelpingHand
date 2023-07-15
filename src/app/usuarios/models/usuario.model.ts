@@ -1,4 +1,5 @@
 export interface Usuario {
+  habilitado:      boolean;
   id:              number;
   puntuacion:      number;
   idTipo:          number;

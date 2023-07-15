@@ -21,4 +21,5 @@ export interface Usuario {
   telefono:        string;
   logueado:        boolean;
   puntuacion:      number;
+  habilitado:      boolean;
 }

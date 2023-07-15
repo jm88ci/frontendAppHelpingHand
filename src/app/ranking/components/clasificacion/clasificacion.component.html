@@ -54,12 +54,10 @@
           <td>{{usuario.email}}</td>
           <td>{{calcularEdad(usuario.fechaNacimiento)}}</td>
           <td>{{usuario.curso}}</td>
-          <td>{{usuario.puntuacion}}</td> <!-- Preguntar a Salva como mostrar la puntuación-->
+          <td>{{usuario.puntuacion}}</td>
           <td>
-            <button (click)="agregarPuntos(usuario.id,3)" pButton label="Sumar 3 Puntos" ></button>
-          </td><!-- Preguntar a Salva porque no recibe las id de los usuarios, eso si todo lo demás funciona
-          porque al usuario con la id 1 le están llegando los puntos" -->
-
+            <button (click)="agregarPuntos(usuario.id,3)" pButton label="Sumar 3 Puntos"></button>
+          </td>
         </tr>
       </ng-template>
     </p-table>

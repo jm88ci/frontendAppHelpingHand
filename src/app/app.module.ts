@@ -12,6 +12,7 @@ import {InformacionModule} from "./informacion/informacion.module";
 import {RankingModule} from "./ranking/ranking.module";
 import {ConfigModule} from "./config/config.module";
 import {MensajesModule} from "./mensajes/mensajes.module";
+import {ContactosModule} from "./contactos/contactos.module";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MensajesModule} from "./mensajes/mensajes.module";
     InformacionModule,
     RankingModule,
     ConfigModule,
-    MensajesModule
+    MensajesModule,
+    ContactosModule
 
   ],
   providers: [],

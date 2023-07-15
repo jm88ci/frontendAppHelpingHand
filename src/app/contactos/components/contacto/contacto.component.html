@@ -1,14 +1,21 @@
-<p-table [value]="data">
+<div class="text-center"><h3>Contactos de interés para usuarios</h3></div>
+<p-table [value]="contactos">
   <ng-template pTemplate="header">
     <tr>
       <th>Nombre</th>
+      <th>Puesto</th>
       <th>Teléfono</th>
+      <th>Correo</th>
+      <th>Valoración</th>
     </tr>
   </ng-template>
-  <ng-template pTemplate="body" let-rowData>
+  <ng-template pTemplate="body" let-contacto>
     <tr>
-      <td>{{ rowData.name }}</td>
-      <td>{{ rowData.phone }}</td>
+      <td>{{ contacto.nombre }}</td>
+      <td>{{ contacto.puesto }}</td>
+      <td>{{ contacto.telefono }}</td>
+      <td>{{ contacto.correo }}</td>
+      <td>{{ contacto.valoracion }}</td>
     </tr>
   </ng-template>
 </p-table>
