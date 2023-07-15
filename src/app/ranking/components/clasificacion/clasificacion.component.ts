@@ -51,7 +51,7 @@ export class ClasificacionComponent {
     this.puntuacionService.sumarPuntos(idUsuarioAyuda, puntos).subscribe({
       next: response => {
         console.log('Puntos agregados exitosamente', response);
-        // Aquí puedes manejar la respuesta de tu servidor, como refrescar la puntuación mostrada en la pantalla
+        this.obtenerArrayDeUsuarios();
       },
       error: err => {
         console.error('Ha ocurrido un error al agregar los puntos', err);

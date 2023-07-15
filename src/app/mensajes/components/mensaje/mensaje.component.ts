@@ -62,7 +62,7 @@ export class MensajeComponent implements OnInit{
   enviarMensaje() {
     this.usuariosCercanos.forEach(usuario => {
       const mensaje: Mensaje = {
-        contenido: "Necesito ayuda, estoy en apuros",
+        contenido: "Necesito ayuda",
         remitente: usuario,
         foto: usuario.foto,
         fechaEnvio: new Date(),

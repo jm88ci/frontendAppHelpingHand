@@ -13,9 +13,6 @@
   padding: 10px;
   border: 1px solid #ccc;
 }
-img{
-  width: 300px;
-}
 
 .botones-separados {
   display: flex;
@@ -26,5 +23,9 @@ img{
 .texto-advertencia{
   text-align: center;
   font-size: 2rem;
+}
 
+.tamano-img{
+  width: 64px;
+  height: 64px;
 }

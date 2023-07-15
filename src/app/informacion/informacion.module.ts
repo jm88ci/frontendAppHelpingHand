@@ -14,6 +14,7 @@ import {PrimengModule} from "../primeng/primeng.module";
     PrimengModule
   ],
   exports: [
+    InfoComponent
   ]
 })
 export class InformacionModule { }

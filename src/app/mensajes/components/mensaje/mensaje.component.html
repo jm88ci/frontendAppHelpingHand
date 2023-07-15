@@ -41,18 +41,23 @@
   <div class="col-6">
     <div class="grid" *ngIf="usuariosCercanos.length > 0">
       <div class="col-6 col-offset-3 my-8">
-        <h3>Usuarios a menos de 300 metros</h3>
-        <p-table [value]="usuariosCercanos">
+
+        <p-table [value]="usuariosCercanos" styleClass="p-datatable-gridlines">
+          <ng-template class="text-center" pTemplate="caption">Usuarios dentro del rango de ayuda</ng-template>
           <ng-template pTemplate="header">
             <tr>
               <th>Foto</th>
               <th>Nombre y apellidos</th>
+              <th>En camino</th>
             </tr>
           </ng-template>
           <ng-template pTemplate="body" let-usuario>
             <tr>
-              <td>{{ usuario.foto }} </td>
+              <td>
+                <img class="tamano-img" [src]="usuario.foto" alt="">
+              </td>
               <td>{{ usuario.nombre }} {{usuario.apellido1}} {{usuario.apellido2}}</td>
+              <td>{{usuario.logueado? '✅' : '❌'}}</td>
             </tr>
           </ng-template>
         </p-table>

@@ -33,21 +33,23 @@
       styleClass="p-datatable-gridlines"
 
     >
-      <ng-template pTemplate="caption">Rankin de BullyBusters</ng-template>
+      <ng-template pTemplate="caption">Ranking de BullyBusters</ng-template>
       <ng-template pTemplate="header">
         <tr>
           <th>Foto</th>
           <th>Nombre Completo</th>
           <th>Correo</th>
-          <th>Edad</th>
+          <th>Edad (años)</th>
           <th>Curso</th>
-          <th>Puntuacion</th>
+          <th>Puntuación</th>
           <th>Sumar</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-usuario>
         <tr>
-          <td>img</td>
+          <td>
+            <img class="tamano-img" [src]="usuario.foto" alt="">
+          </td>
           <td>{{usuario.nombre + " "+ usuario.apellido1 + " " + usuario.apellido2}}</td>
           <td>{{usuario.email}}</td>
           <td>{{calcularEdad(usuario.fechaNacimiento)}}</td>
