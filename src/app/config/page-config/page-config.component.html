@@ -1,27 +1,74 @@
-<div class="text-center"><h2>Aquí puedes elegir los temas de tu aplicación</h2></div>
-<div class="flex align-items-center justify-content-center mb-4">
-  <a (click)="changeTheme('saga-blue')" class="mr-3 cursor-pointer">
-    <img src="assets/img/theme/saga-blue.png" width="50" alt="">
-  </a>
-  <a (click)="changeTheme('vela-blue')" class="mr-3 cursor-pointer">
-    <img src="assets/img/theme/vela-blue.png" width="50" alt="">
-  </a>
-  <a (click)="changeTheme('arya-blue')" class="mr-3 cursor-pointer">
-    <img src="assets/img/theme/arya-blue.png" width="50" alt="">
-  </a>
-  <a (click)="changeTheme('md-light-indigo')" class="mr-3 cursor-pointer">
-    <img src="assets/img/theme/md-light-indigo.svg" width="50" alt="">
-  </a>
-  <a (click)="changeTheme('md-dark-indigo')" class="mr-3 cursor-pointer">
-    <img src="assets/img/theme/md-dark-indigo.svg" width="50" alt="">
-  </a>
-  <a (click)="changeTheme('bootstrap4-light-purple')" class="mr-3 cursor-pointer">
-    <img src="assets/img/theme/bootstrap4-light-purple.svg" width="50" alt="">
-  </a>
-  <a (click)="changeTheme('bootstrap4-dark-purple')" class="mr-3 cursor-pointer">
-    <img src="assets/img/theme/bootstrap4-dark-purple.svg" width="50" alt="">
-  </a>
-  <a (click)="changeTheme('style-helping-hand')" class="mr-3 cursor-pointer">
-    <img src="assets/img/logomano.png" alt="Logo de manos" width="15%">
-  </a>
+<div class="d-flex justify-content-center">
+  <h5>Scale</h5>
+  <div class="flex align-items-center m-3 p-3">
+    <button icon="pi pi-minus" type="button" pButton (click)="decrementScale()"
+            class="p-button-text p-button-rounded w-2rem h-2rem mr-2" [disabled]="scale === scales[0]"></button>
+    <div class="flex gap-2 align-items-center">
+      <i class="pi pi-circle-fill text-300" *ngFor="let s of scales" [ngClass]="{'text-primary-500': s === scale}"></i>
+    </div>
+    <button icon="pi pi-plus" type="button" pButton (click)="incrementScale()"
+            class="p-button-text p-button-rounded w-2rem h-2rem ml-2"
+            [disabled]="scale === scales[scales.length - 1]"></button>
+  </div>
+  <p-divider></p-divider>
 </div>
+<div class="grid">
+  <div class="col text-center"><h5>Bootstrap</h5></div>
+  <div class="col text-center"><h5>PrimeOne Design - Legacy</h5></div>
+  <div class="col text-right"><h5>PrimeOne Design</h5></div>
+  <div class="col text-center"><h5>Heiping-hand</h5></div>
+</div>
+<div class="grid">
+  <div class="col">
+    <a (click)="changeTheme('bootstrap4-light-purple')" class="mr-3 cursor-pointer">
+      <img src="assets/img/theme/bootstrap4-light-purple.svg" width="50" alt="icono bootstrap">
+    </a>
+  </div>
+  <div class="col">
+    <a (click)="changeTheme('bootstrap4-dark-purple')" class="mr-3 cursor-pointer">
+      <img src="assets/img/theme/bootstrap4-dark-purple.svg" width="50" alt="icono bootstrap">
+    </a>
+  </div>
+  <div class="col">
+    <a (click)="changeTheme('saga-blue')" class="mr-3 cursor-pointer">
+      <img src="assets/img/theme/saga-blue.png" width="50" alt="">
+    </a>
+  </div>
+  <div class="col">
+    <a (click)="changeTheme('vela-blue')" class="mr-3 cursor-pointer">
+      <img src="assets/img/theme/vela-blue.png" width="50" alt="">
+    </a>
+  </div>
+  <div class="col">
+    <a (click)="changeTheme('arya-blue')" class="mr-3 cursor-pointer">
+      <img src="assets/img/theme/arya-blue.png" width="50" alt="arya-blue">
+    </a>
+  </div>
+  <div class="col">
+    <a (click)="changeTheme('md-light-indigo')" class="mr-3 cursor-pointer">
+      <img src="assets/img/theme/md-light-indigo.svg" width="50" alt="">
+    </a>
+  </div>
+  <div class="col">
+    <a (click)="changeTheme('md-dark-indigo')" class="mr-3 cursor-pointer">
+      <img src="assets/img/theme/md-dark-indigo.svg" width="50" alt="">
+    </a>
+  </div>
+  <div class="col">
+    <a (click)="cambiarColor()" class="mr-3 cursor-pointer">
+      <img src="assets/img/logomano.png" alt="Logo de manos" width="50%">
+    </a>
+  </div>
+
+</div>
+<div class="grid">
+  <div class="col"><h5>light-purple</h5></div>
+  <div class="col"><h5>dark-purple</h5></div>
+  <div class="col"><h5>saga-blue</h5></div>
+  <div class="col"><h5>vela-blue</h5></div>
+  <div class="col"><h5>arya-blue</h5></div>
+  <div class="col"><h5>md-light-indigo</h5></div>
+  <div class="col"><h5>md-dark-indigo</h5></div>
+  <div class="col"><h5>Heiping-hand</h5></div>
+</div>
+

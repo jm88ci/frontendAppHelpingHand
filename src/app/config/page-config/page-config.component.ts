@@ -1,32 +1,49 @@
-import { Component } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ThemeService} from "../service/theme.service";
+import {MenuItem} from "primeng/api";
 
 @Component({
   selector: 'app-page-config',
   templateUrl: './page-config.component.html',
   styleUrls: ['./page-config.component.css']
 })
-export class PageConfigComponent {
+export class PageConfigComponent{
 
-  constructor(private themeService: ThemeService) {}
+  @Input() minimal: boolean = false;
 
-  selectedState: any = null;
+  scales: number[] = [12, 13, 14, 15, 16];
 
-  states: any[] = [
-    {name: 'Arizona', code: 'Arizona'},
-    {name: 'California', value: 'California'},
-    {name: 'Florida', code: 'Florida'},
-    {name: 'Ohio', code: 'Ohio'},
-    {name: 'Washington', code: 'Washington'}
-  ];
+  constructor(
+    private themeService: ThemeService,
+  ) {
+  }
+  cambiarColor(): void {
+    this.themeService.toggleColor();
+  }
 
-  cities1: any[] = [];
+  get scale(): number {
+    return this.themeService.config.scale;
+  }
 
-  cities2: any[] = [];
+  set scale(_val: number) {
+    this.themeService.config.scale = _val;
+  }
 
-  city1:any = null;
 
-  city2:any = null;
+  decrementScale() {
+    this.scale--;
+    this.applyScale();
+  }
+
+  incrementScale() {
+    this.scale++;
+    this.applyScale();
+  }
+
+  applyScale() {
+    document.documentElement.style.fontSize = this.scale + 'px';
+  }
+
 
   changeTheme(theme: string) {
     this.themeService.switchTheme(theme);
