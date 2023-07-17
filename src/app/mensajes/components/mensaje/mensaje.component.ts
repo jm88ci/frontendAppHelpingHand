@@ -47,6 +47,7 @@ export class MensajeComponent implements OnInit{
   obtenerUsuariosCercanos(): Usuario[] {
     this.mensajeService.obtenerUsuariosCercanos().subscribe({
       next: (usuarios: Usuario[]) => {
+        this.usuariosCercanos.sort((a, b) => b.puntuacion - a.puntuacion);
         this.usuariosCercanos = usuarios;
         this.enviarMensaje();
       },

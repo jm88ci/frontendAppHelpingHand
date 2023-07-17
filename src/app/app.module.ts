@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,8 +30,7 @@ import {ContactosModule} from "./contactos/contactos.module";
     RankingModule,
     ConfigModule,
     MensajesModule,
-    ContactosModule
-
+    ContactosModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

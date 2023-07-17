@@ -61,17 +61,31 @@ export class SignUpComponent implements OnInit{
   }
   public validateForm(){
     let user : Usuario = this.userForm.value;
+    if (user.foto == null){
+      user.foto = "https://previews.123rf.com/images/jemastock/jemastock1707/jemastock170713209/82545738-ilustraci%C3%B3n-de-vector-de-dibujos-animados-sonriente-cara-de-personaje-de-cabeza-de-hombre.jpg";
+    }
+
+    if (user.latitud === 0){
+      user.latitud = 40.7118;
+    }
+
+    if (user.longitud === 0){
+      user.longitud = -74.0067;
+    }
+
       this.saveUser(user);
     }
 
   public saveUser(user: Usuario) {
+
     this.savingUser = true;
     this.authService.saveUser(user).subscribe(
       {
         next: () => {
+
           this.messageService.add({
-            summary: "New user",
-            detail: "User has been successfully saved",
+            summary: "Nuevo Usuario",
+            detail: "El usuario ha sido creado",
             severity: "success",
             icon: "pi pi-user-plus"
           });
@@ -79,8 +93,8 @@ export class SignUpComponent implements OnInit{
         },
         error: (datos: HttpErrorResponse) => {
           this.messageService.add({
-            summary: "New user",
-            detail: "There was an error saving. " + datos.message,
+            summary: "Nuevo usuario",
+            detail: "Error al crear el usuario " + datos.message,
             severity: "error",
             sticky: true,
             icon: "pi pi-user-plus"
