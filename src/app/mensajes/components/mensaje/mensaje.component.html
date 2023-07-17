@@ -41,7 +41,11 @@
     <div class="grid" *ngIf="usuariosCercanos.length > 0">
       <div class="col-6 col-offset-3 my-8">
 
-        <p-table [value]="usuariosCercanos" styleClass="p-datatable-gridlines">
+        <p-table [value]="usuariosCercanos"
+                 [paginator]="true"
+                 [rows]="6"
+                 [rowsPerPageOptions]="[6, 12, 18, 24]"
+                 styleClass="p-datatable-gridlines">
           <ng-template class="text-center" pTemplate="caption">Usuarios dentro del rango de ayuda</ng-template>
           <ng-template pTemplate="header">
             <tr>

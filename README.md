@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Instrucciones para notificaciones-pwa
+
+# Instalar dos paquetes de forma global y obtener vapid-keys en json
+
+npm install web-push http-server -g
+web-push generate-vapid-keys --json
+{"publicKey":"BAs2xdpSsFVqF6TNToI-Oy_MAKVklJ3TVBa0egryXGuR4msiqc10DC_wnnR_2dYB0mvniikga8lIxWz6BDYzPP4","privateKey":"aShivgGSMXanLMGbiQRVhUFkzxoVaNImjOQ4h2hWkRU"}
+
+# Instalar angular/pwa en nuestro proyecto. Importante situarse en nuestro directorio de angular
+
+ng add @angular/pwa

@@ -28,8 +28,8 @@
     <p-table
       [value]="usuarios"
       [paginator]="true"
-      [rows]="8"
-      [rowsPerPageOptions]="[8, 16, 32]"
+      [rows]="6"
+      [rowsPerPageOptions]="[6, 12, 18, 24]"
       styleClass="p-datatable-gridlines"
 
     >
@@ -41,7 +41,7 @@
           <th>Correo</th>
           <th>Edad (años)</th>
           <th>Curso</th>
-          <th>Puntuación</th>
+          <th> <!--pSortableColumn="Puntuacion"-->Puntuación <!--<p-sortIcon field="price"></p-sortIcon>--></th>
           <th>Sumar</th>
         </tr>
       </ng-template>
