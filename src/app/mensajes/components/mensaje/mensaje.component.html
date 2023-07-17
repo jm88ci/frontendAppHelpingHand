@@ -28,13 +28,12 @@
     </div>
     <div class="grid" *ngIf="!dialogVisible">
       <div class="col-6 col-offset-3 my-8">
-        <p-card>
-          <ng-template pTemplate="header">
-            <p-button (click)="this.obtenerUsuariosCercanos();">
-              <img src="assets/img/sos.png" alt="Titulo: Helping Hand">
-            </p-button>
-          </ng-template>
-        </p-card>
+        <div>
+          <a (click)="this.obtenerUsuariosCercanos();">
+            <img src="assets/img/sos.png">
+          </a>
+        </div>
+
       </div>
     </div>
   </div>
@@ -57,7 +56,7 @@
                 <img class="tamano-img" [src]="usuario.foto" alt="">
               </td>
               <td>{{ usuario.nombre }} {{usuario.apellido1}} {{usuario.apellido2}}</td>
-              <td>{{usuario.logueado? '✅' : '❌'}}</td>
+              <td>{{usuario.logueado ? '✅' : '❌'}}</td>
             </tr>
           </ng-template>
         </p-table>

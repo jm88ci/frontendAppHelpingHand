@@ -1,7 +1,7 @@
 <p-toast></p-toast>
 <p-dialog
   [(visible)]="mostrarRegistro"
-  [closable]="true"
+  [closable]="false"
   [modal]="true"
   [maximizable]="true"
   header="Make an account"
@@ -84,7 +84,7 @@
 
                 label="Cancelar"
                 styleClass="p-button-secondary"
-                routerLink="/login"
+                routerLink="auth/login"
               ></p-button>
             </div>
             </div>

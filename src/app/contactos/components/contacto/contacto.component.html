@@ -13,8 +13,12 @@
     <tr>
       <td>{{ contacto.nombre }}</td>
       <td>{{ contacto.puesto }}</td>
-      <td>{{ contacto.telefono }}</td>
-      <td>{{ contacto.correo }}</td>
+      <td>
+       <span class="pi pi-phone"><a href="tel:{{ contacto.telefono }}"> {{ contacto.telefono }}</a></span>
+      </td>
+      <td>
+        <span class="pi pi-envelope"><a href="mailto:{{ contacto.correo }}"> {{ contacto.correo }}</a></span>
+      </td>
       <td>{{ contacto.valoracion }}</td>
     </tr>
   </ng-template>

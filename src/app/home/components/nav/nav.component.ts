@@ -58,7 +58,7 @@ export class NavComponent {
       {
         label: "Logout",
         icon: PrimeIcons.POWER_OFF,
-        routerLink: "/logout"
+        routerLink: "auth/login"
       }
 
     ];

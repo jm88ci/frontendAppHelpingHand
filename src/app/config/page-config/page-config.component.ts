@@ -16,6 +16,8 @@ export class PageConfigComponent{
   constructor(
     private themeService: ThemeService,
   ) {
+    const storedScale = localStorage.getItem('appScale');
+    this.scale = storedScale ? parseInt(storedScale, 10) : 14;
   }
   cambiarColor(): void {
     this.themeService.toggleColor();
@@ -27,6 +29,7 @@ export class PageConfigComponent{
 
   set scale(_val: number) {
     this.themeService.config.scale = _val;
+    localStorage.setItem('appScale', _val.toString());
   }
 
 
