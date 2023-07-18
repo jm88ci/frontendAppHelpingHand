@@ -38,8 +38,8 @@ web-push generate-vapid-keys --json
 
 ng add @angular/pwa
 
-# Creamos en el componente de nuestro frontend todo lo necesario para solicitar permisos de notificaciones 
- HTML
+# Creamos en el componente de nuestro frontend todo lo necesario para solicitar permisos de notificaciones (esto nos devolverá el endpoint del usuario) 
+ HTML de mi componente
 
 <div>
   <button (click)="suscribirseANotificaciones()">Solicitar</button>
@@ -48,7 +48,7 @@ ng add @angular/pwa
   <code>{{respuesta | json}}</code>
 </div>
  
-  TS
+  TS de mi componente
 
 import { Component } from '@angular/core';
 import {SwPush} from "@angular/service-worker";
