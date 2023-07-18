@@ -13,6 +13,7 @@ import {RankingModule} from "./ranking/ranking.module";
 import {ConfigModule} from "./config/config.module";
 import {MensajesModule} from "./mensajes/mensajes.module";
 import {ContactosModule} from "./contactos/contactos.module";
+import {Tooltip} from "primeng/tooltip";
 
 @NgModule({
   declarations: [

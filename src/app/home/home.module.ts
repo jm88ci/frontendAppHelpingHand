@@ -7,6 +7,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import {PrimengModule} from "../primeng/primeng.module";
 import {StyleClassModule} from "primeng/styleclass";
 import {FormsModule} from "@angular/forms";
+import {TooltipModule} from "primeng/tooltip";
 
 
 
@@ -27,7 +28,8 @@ import {FormsModule} from "@angular/forms";
         CommonModule,
         PrimengModule,
         StyleClassModule,
-        FormsModule
+        FormsModule,
+        TooltipModule
     ]
 })
 export class HomeModule { }

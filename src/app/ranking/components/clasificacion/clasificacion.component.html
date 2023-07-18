@@ -5,8 +5,11 @@
       subheader="Cazadores de Matones"
       [style]="{ width: '500px' }"
       class="text-center sm:shadow-3 mt-3"
+      role="region"
+      aria-labelledby="bullybusters-heading"
     >
       <ng-template pTemplate="header">
+        <h2 id="bullybusters-heading">BULLYBUSTERS</h2>
         <img alt="Card" src="assets/img/heroes.png"/>
       </ng-template>
       <p>
@@ -19,6 +22,8 @@
           label="Ranking"
           icon="pi pi-chart-line"
           (click)="obtenerArrayDeUsuarios()"
+          role="button"
+          aria-label="Obtener Ranking"
         >
         </p-button>
       </ng-template>
@@ -31,24 +36,25 @@
       [rows]="6"
       [rowsPerPageOptions]="[6, 12, 18, 24]"
       styleClass="p-datatable-gridlines"
-
+      role="table"
+      aria-caption="Ranking de BullyBusters"
     >
-      <ng-template pTemplate="caption">Ranking de BullyBusters</ng-template>
+      <caption id="ranking-caption">Ranking de BullyBusters</caption>
       <ng-template pTemplate="header">
         <tr>
-          <th>Foto</th>
-          <th>Nombre Completo</th>
-          <th>Correo</th>
-          <th>Edad (años)</th>
-          <th>Curso</th>
-          <th> <!--pSortableColumn="Puntuacion"-->Puntuación <!--<p-sortIcon field="price"></p-sortIcon>--></th>
-          <th>Sumar</th>
+          <th scope="col">Foto</th>
+          <th scope="col">Nombre Completo</th>
+          <th scope="col">Correo</th>
+          <th scope="col">Edad (años)</th>
+          <th scope="col">Curso</th>
+          <th scope="col">Puntuación</th>
+          <th scope="col">Sumar</th>
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-usuario>
         <tr>
           <td>
-            <img class="tamano-img" [src]="usuario.foto" alt="">
+            <img class="tamano-img" [src]="usuario.foto" alt="Foto de {{usuario.nombre}} {{usuario.apellido1}} {{usuario.apellido2}}">
           </td>
           <td>{{usuario.nombre + " "+ usuario.apellido1 + " " + usuario.apellido2}}</td>
           <td>{{usuario.email}}</td>
@@ -63,10 +69,3 @@
     </p-table>
   </div>
 </div>
-
-
-
-
-
-
-

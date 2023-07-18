@@ -9,6 +9,7 @@ import {DialogModule} from "primeng/dialog";
 import {TableModule} from "primeng/table";
 import {PaginatorModule} from "primeng/paginator";
 import {FormsModule} from "@angular/forms";
+import {Tooltip, TooltipModule} from "primeng/tooltip";
 
 
 //Añadir aquí sólo los módulos de prime
@@ -23,7 +24,8 @@ import {FormsModule} from "@angular/forms";
     DialogModule,
     TableModule,
     PaginatorModule,
-    FormsModule
+    FormsModule,
+    TooltipModule
   ]
 })
 export class PrimengModule { }
